@@ -54,6 +54,10 @@ struct ContentView: View {
         }
         .onChange(of: moves){ newValue in
             checkForWinner()
+            if !(gameOver || moves.contains("")){
+                winMessage = "Cat's Game"
+                gameOver = true
+            }
         }
         .padding()
     }
